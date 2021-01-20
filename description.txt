@@ -1,1 +1,40 @@
-Lite's Factory Mod is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+The Factory Mod is a mod which adds... factories! More specifically, it adds energy, different machines, automatic farms, etc. Inspired by Minecraft's Redstone Flux.
+
+As with all of my mods, I prefer quality of quantity. This mod is a great addition to any modded playthrough, which adds incentive to build with technicality in mind. Its fun to see how many different kinds of automatic farms you can make etc.
+This mod spreads with progression, so that you can never become too powerful.
+
+The Factory Mod adds Tex, a wireless form of energy used to power many different machines and gadgets.
+You can obtain Tex by defeating monsters, who drop condensed monster energy (C.M.E), which you can then put into an Energy Unraveler to add the Tex into the worlds wireless energy storage.
+Bosses and other strong monsters can contain more monster energy.
+A mechanical statue can be created, which spawns in an actual mob which drops loot, however, these statues cost Tex to activate.
+
+Tree Harvesters, a new mechanical block can also be made which (when supplied with enough Tex) breaks nearby trees and stores the wood it harvests.Wood can be deposited into an Igniter, which is a new mechanical block that creates Tex from wood.
+
+Automatic Extractinators, a new mechanical block that when supplied with silt/slush/fossils and Tex, works the same as the regular extractinators, but without player contact.
+
+Sifters, a new non-mechanical block. Placing dirt into a sifter converts the dirt into 2 silt.
+Automatic Sifters, a new mechanical block. When supplied with dirt and Tex, it automatically breaks the dirt down into silt, and stores it.
+
+Crop Harvesters, a new mechanical block that (when supplied with enough Tex), harvests nearby crops and stores it.
+Crop Fertilizers, a new mechanical block that (when supplied with enough Tex), accelerates and waters nearby tree and crops.
+
+Tex Conveyor Belts, a new mechanical block that can be obtained in pre-hardmode, works similarly to the Conveyor Belts already in game, however they also need to be supplied with Tex.
+
+Portable Energy Unraveler, an item that (when in your inventory) converts the C.M.E. in your inventory into Tex, and deposits it into the worlds wireless energy storage.
+
+C.M.E Bank, a world-wide storage, like a piggy bank (but for the world), where and unlimited amount of C.M.E can be stored.
+Wireless C.M.E Bank, an Item that automatically deposits your C.M.E into your C.M.E Bank, just like the automatic piggy bank from LuiAFK.
+C.M.E is stored per world, not per player. Its like a piggy bank for the world, but you can put the C.M.E in your inventory and take it to another world.
+Automatic C.M.E Merchant, automatically sells your C.M.E. Does not interfere with what is already in your C.M.E bank.
+
+Mod By:
+Vincent Jenei (Lite#4249)
+FOX (Starbreaker The Interstellar Fox#5356)
+
+We also have a discord server, so I will make the invite as the "homepage". Hop on in, chat, and even contibute to the mod.
+I also need some people to help make a wiki, that would be awesome!
+Bottom line is, I need feedback. Please join the discord to help out with this mod and make the mod grow, thanks!
+
+Change-Log:
+
+v0.1:
