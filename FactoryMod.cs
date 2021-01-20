@@ -73,11 +73,11 @@ namespace FactoryMod
 
             CMEPanel = new DragableUIPanel();
 
-            CMEPanel.Left.Set(0, 0);
+            CMEPanel.Left.Set(1000, 0);
             CMEPanel.Top.Set(0, 0);
             CMEPanel.Width.Set(125, 0);
             CMEPanel.Height.Set(25, 0);
-            CMEPanel.HAlign = .5f;
+            CMEPanel.HAlign = .0f;
             CMEPanel.VAlign = .0f;
             Append(CMEPanel);
 
@@ -94,11 +94,11 @@ namespace FactoryMod
 
             TEXPanel = new DragableUIPanel();
 
-            TEXPanel.Left.Set(0, 0);
+            TEXPanel.Left.Set(800, 0);
             TEXPanel.Top.Set(0, 0);
             TEXPanel.Width.Set(125, 0);
             TEXPanel.Height.Set(25, 0);
-            TEXPanel.HAlign = .5f;
+            TEXPanel.HAlign = .0f;
             TEXPanel.VAlign = .0f;
             Append(TEXPanel);
 
