@@ -10,6 +10,8 @@ namespace FactoryMod.Items.CME
         {
             Tooltip.SetDefault("Condensed Monster Energy\nCan be deposited into an Energy Unraveler to be converted into TEX.");
             DisplayName.SetDefault("Small C.M.E");
+
+            item.maxStack = 9999;
         }
 
         public override void SetDefaults()
