@@ -1,6 +1,10 @@
-﻿using Terraria;
+﻿using FactoryMod.Items.MechanicalBlocks;
+using FactoryMod.Items.CME;
+using System;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace FactoryMod.Items.CME
 {
@@ -18,6 +22,14 @@ namespace FactoryMod.Items.CME
             item.value = 10;
 
             item.maxStack = 9999;
+        }
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemType<MediumCME>(), 1);
+            recipe.SetResult(this, 10);
+            recipe.AddRecipe();
+            base.AddRecipes();
         }
     }
 }

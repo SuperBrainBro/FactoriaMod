@@ -1,5 +1,5 @@
 ﻿using FactoryMod.Tiles;
-
+using FactoryMod.Items.CME;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -27,11 +27,8 @@ namespace FactoryMod.Items.MechanicalBlocks
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.LifeCrystal, 5);
-            recipe.AddIngredient(ItemID.StoneBlock, 100);
-            recipe.AddIngredient(ItemID.VilePowder, 25);
-            recipe.AddIngredient(ItemID.Wire, 50);
-            recipe.AddTile(TileID.DemonAltar);
+            recipe.AddIngredient(ItemType<MediumCME>(), 1);
+            recipe.AddIngredient(ItemID.Extractinator, 1);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
             base.AddRecipes();
