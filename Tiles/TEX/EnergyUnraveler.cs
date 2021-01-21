@@ -2,7 +2,7 @@
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
-namespace FactoryMod.Tiles
+namespace FactoryMod.Tiles.TEX
 {
     public class EnergyUnraveler : ModTile
     {
