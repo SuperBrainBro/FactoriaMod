@@ -28,6 +28,11 @@ namespace FactoryMod.Items.CME
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
             base.AddRecipes();
+
+            recipe.AddIngredient(ItemType<MediumCME>(), 10);
+            recipe.SetResult(this, 1);
+            recipe.AddRecipe();
+            base.AddRecipes();
         }
     }
 }

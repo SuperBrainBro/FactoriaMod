@@ -19,15 +19,15 @@ namespace FactoryMod.Items.TEX
         {
             item.rare = ItemRarityID.White;
             item.value = 1000;
-            item.width = 8;
-            item.height = 8;
+            item.width = 32;
+            item.height = 32;
             item.maxStack = 9999;
             item.useStyle = ItemUseStyleID.EatingUsing;
         }
 
         public override bool UseItem(Player player)
         {
-            Main.NewText("Cleared C.M.E Bank.", Color.Orange);
+            Main.NewText("Cleared T.E.X. Bank.", Color.Orange);
             GetInstance<FactoryModWorld>().worldTEX = 0;
             return true;
         }

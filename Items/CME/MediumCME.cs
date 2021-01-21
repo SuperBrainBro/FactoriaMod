@@ -17,8 +17,8 @@ namespace FactoryMod.Items.CME
         {
             item.rare = ItemRarityID.White;
             item.value = 100;
-            item.width = 32;
-            item.height = 32;
+            item.width = 16;
+            item.height = 16;
             item.maxStack = 9999;
         }
         public override void AddRecipes()
@@ -26,6 +26,11 @@ namespace FactoryMod.Items.CME
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemType<SmallCME>(), 10);
             recipe.SetResult(this, 1);
+            recipe.AddRecipe();
+            base.AddRecipes();
+
+            recipe.AddIngredient(ItemType<LargeCME>(), 1);
+            recipe.SetResult(this, 10);
             recipe.AddRecipe();
             base.AddRecipes();
         }

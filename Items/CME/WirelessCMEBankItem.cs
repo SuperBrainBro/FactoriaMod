@@ -36,9 +36,6 @@ namespace FactoryMod.Items.CME
 			long small = 0L;
 			long medium = 0L;
 			long large = 0L;
-			bool flag1 = false;
-			bool flag2 = false;
-			bool flag3 = false;
 			for (int i = 49; i >= 0; i--)
 			{
 				Item item = player.inventory[i];
