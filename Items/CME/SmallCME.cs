@@ -24,12 +24,12 @@ namespace FactoryMod.Items.CME
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemType<MediumCME>(), 1);
-            recipe.SetResult(this, 10);
+            recipe.SetResult(this, 100);
             recipe.AddRecipe();
             base.AddRecipes();
 
             recipe.AddIngredient(ItemType<LargeCME>(), 1);
-            recipe.SetResult(this, 100);
+            recipe.SetResult(this, 10000);
             recipe.AddRecipe();
             base.AddRecipes();
         }
