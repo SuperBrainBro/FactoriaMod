@@ -1,8 +1,6 @@
-using FactoryMod.Items.MechanicalBlocks;
-using FactoryMod.Items.CME;
 using System;
+using FactoryMod.Items.CME;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
@@ -28,7 +26,7 @@ namespace FactoryMod
                 else if (Main.rand.NextBool(2))
                 {
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 400), 0));
-                }              
+                }
             }
             else if (npc.lifeMax >= 1999)
             {
@@ -42,16 +40,5 @@ namespace FactoryMod
                 }
             }
         }
-
-        public override void SetupShop(int type, Chest shop, ref int nextSlot)
-        {
-            if (type == NPCID.Merchant)
-            {
-                shop.item[nextSlot].SetDefaults(ItemType<EnergyUnravelerItem>());
-                shop.item[nextSlot].shopCustomPrice = 20000;
-                nextSlot++;
-            }
-        }
-
     }
 }

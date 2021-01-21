@@ -1,10 +1,8 @@
-﻿using FactoryMod.Tiles;
-using FactoryMod.Items.CME;
-using Microsoft.Xna.Framework;
+﻿using FactoryMod.Items.CME;
+using FactoryMod.Tiles;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.ObjectData;
 using static Terraria.ModLoader.ModContent;
 
 namespace FactoryMod.Items.MechanicalBlocks
@@ -22,6 +20,7 @@ namespace FactoryMod.Items.MechanicalBlocks
             item.CloneDefaults(ItemID.Extractinator);
             item.createTile = TileType<EnergyUnraveler>();
             item.placeStyle = 0;
+            item.value = Item.sellPrice(gold: 2);
         }
 
         public override void AddRecipes()

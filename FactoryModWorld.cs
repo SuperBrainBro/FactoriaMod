@@ -1,13 +1,6 @@
-using System.Collections.Generic;
 using System.IO;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.GameContent.Generation;
-using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Terraria.World.Generation;
-using static Terraria.ModLoader.ModContent;
 
 namespace FactoryMod
 {
