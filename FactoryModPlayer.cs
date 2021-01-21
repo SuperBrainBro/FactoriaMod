@@ -1,6 +1,6 @@
 using Terraria.ModLoader;
-
 using FactoryMod.Items.CME;
+using Terraria;
 
 namespace FactoryMod
 {
