@@ -26,7 +26,7 @@ namespace FactoryMod
         public override TagCompound Save()
         {
             int CME = worldCME;
-            int TEX = worldCME;
+            int TEX = worldTEX;
 
             return new TagCompound
             {
