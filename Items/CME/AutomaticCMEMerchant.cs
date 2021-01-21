@@ -43,19 +43,19 @@ namespace FactoryMod.Items.CME
 				{
 					small = player.inventory[i].stack;
 					player.inventory[i].TurnToAir();
-					player.SellItem(10, (int)small);
+					player.SellItem(item.value + Main.rand.Next(-1, 10), (int)small);
 				}
 				if (item.type == ItemType<MediumCME>())
 				{
 					medium = player.inventory[i].stack;
 					player.inventory[i].TurnToAir();
-					player.SellItem(1000, (int)medium);
+					player.SellItem(item.value + Main.rand.Next(-100, 1000), (int)medium);
 				}
 				if (item.type == ItemType<LargeCME>())
 				{
 					large = player.inventory[i].stack;
 					player.inventory[i].TurnToAir();
-					player.SellItem(100000, (int)large);
+					player.SellItem(item.value + Main.rand.Next(-10000, 100000), (int)large);
 				}
 			}			
 			if (Main.playerInventory)

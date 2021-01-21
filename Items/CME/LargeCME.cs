@@ -16,7 +16,7 @@ namespace FactoryMod.Items.CME
         public override void SetDefaults()
         {
             item.rare = ItemRarityID.White;
-            item.value = 1000;
+            item.value = 100000;
             item.width = 32;
             item.height = 32;
             item.maxStack = 9999;
