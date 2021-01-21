@@ -18,9 +18,9 @@ namespace FactoryMod
 
             max = 21474;
         }
-        public override void PostUpdate()
+        public override void PreUpdate()
         {
-            worldCME = Math.Min(worldTEX, max);
+            worldCME = Math.Min(worldCME, max);
             worldTEX = Math.Min(worldTEX, max);
         }
         public override TagCompound Save()
