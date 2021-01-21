@@ -83,6 +83,11 @@ namespace FactoryMod.NPCs.Town
             chat.Add("Back in my day, we used to create automatic bunny harvesting systems.");
             int npc = NPC.FindFirstNPC(NPCID.Guide);
             npc = NPC.FindFirstNPC(NPCID.Merchant);
+            if (npc >= 0 && Main.rand.NextBool(4))
+            {
+                chat.Add(Main.npc[npc].GivenName + " and I used to be best buds back in the day. We used to fight multiple eye of Cthulhus in" +
+                    " order to farm for C.M.E.");
+            }
             npc = NPC.FindFirstNPC(NPCID.Nurse);
             npc = NPC.FindFirstNPC(NPCID.Painter);
             npc = NPC.FindFirstNPC(NPCID.DyeTrader);
