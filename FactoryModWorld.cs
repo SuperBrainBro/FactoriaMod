@@ -15,6 +15,8 @@ namespace FactoryMod
         {
             worldCME = 0;
             worldTEX = 0;
+
+            max = 21474;
         }
         public override void PostUpdate()
         {
