@@ -43,7 +43,7 @@ namespace FactoryMod.Items.CME
 				{
 					small = player.inventory[i].stack;
 					player.inventory[i].TurnToAir();
-					GetInstance<FactoryModWorld>().worldCME += (int)small * 100;					
+					GetInstance<FactoryModWorld>().worldCME += (int)small * 1;					
 				}
 				if (item.type == ItemType<MediumCME>())
 				{
@@ -55,7 +55,7 @@ namespace FactoryMod.Items.CME
 				{
 					large = player.inventory[i].stack;
 					player.inventory[i].TurnToAir();
-					GetInstance<FactoryModWorld>().worldCME += (int)large * 1;
+					GetInstance<FactoryModWorld>().worldCME += (int)large * 100;
 				}
 			}			
 			if (Main.playerInventory)
