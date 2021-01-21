@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -9,12 +10,17 @@ namespace FactoryMod
         public int worldCME;
         public int worldTEX;
 
+        public int max;
         public override void Initialize()
         {
             worldCME = 0;
             worldTEX = 0;
         }
-
+        public override void PostUpdate()
+        {
+            worldCME = Math.Max(worldCME, max);
+            worldTEX = Math.Max(worldTEX, max);
+        }
         public override TagCompound Save()
         {
             int CME = worldCME;

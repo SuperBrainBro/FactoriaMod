@@ -6,6 +6,8 @@ using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.UI;
 
+using static Terraria.ModLoader.ModContent;
+
 namespace FactoryMod
 {
     public class FactoryMod : Mod
@@ -116,10 +118,10 @@ namespace FactoryMod
                 Recalculate();
             }
 
-            string CMEValue = ModContent.GetInstance<FactoryModWorld>().worldCME.ToString();
+            string CMEValue = GetInstance<FactoryModWorld>().worldCME.ToString();
             CMEValueText.SetText(CMEValue + " C.M.E.");
 
-            string TEXValue = ModContent.GetInstance<FactoryModWorld>().worldTEX.ToString();
+            string TEXValue = GetInstance<FactoryModWorld>().worldTEX.ToString();
             TEXValueText.SetText(TEXValue + " T.E.X.");
         }
     }
