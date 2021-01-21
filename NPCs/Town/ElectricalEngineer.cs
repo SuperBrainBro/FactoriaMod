@@ -66,16 +66,12 @@ namespace FactoryMod.NPCs.Town
 
         public override string TownNPCName()
         {
-            switch (WorldGen.genRand.Next(4))
+            switch (WorldGen.genRand.Next(2))
             {
-                case 0:
-                    return "Someone";
-                case 1:
-                    return "Somebody";
-                case 2:
-                    return "Blocky";
                 default:
-                    return "Colorless";
+                    return "Arcane Fox";
+                case 0:
+                    return "Luxure Bob";
             }
         }
 
