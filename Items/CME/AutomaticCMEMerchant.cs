@@ -7,12 +7,12 @@ using static Terraria.ModLoader.ModContent;
 
 namespace FactoryMod.Items.CME
 {
-	public class WirelessCMEBankItem : ModItem
+	public class AutomaticCMEMerchant : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("C.M.E Bank - stores an unlimited amount of C.M.E.\nAutomatically deposits C.M.E into the C.M.E Bank.");
-			DisplayName.SetDefault("Wireless C.M.E. Bank");
+			Tooltip.SetDefault("Automatically sells C.M.E.\nTakes priority over the Wireless C.M.E Bank.");
+			DisplayName.SetDefault("Automatic C.M.E. Merchant");
 		}
 
 		public override void SetDefaults()
@@ -24,10 +24,10 @@ namespace FactoryMod.Items.CME
 		}
 		public override void UpdateInventory(Player player)
 		{
-			player.GetModPlayer<FactoryModPlayer>().collectCME = true;
+			player.GetModPlayer<FactoryModPlayer>().sellCME = true;
 		}
 
-		internal static void UpdateCME(Player player)
+		internal static void SellCME(Player player)
 		{
 			if (player.whoAmI != Main.myPlayer)
 			{
@@ -43,19 +43,19 @@ namespace FactoryMod.Items.CME
 				{
 					small = player.inventory[i].stack;
 					player.inventory[i].TurnToAir();
-					GetInstance<FactoryModWorld>().worldCME += (int)small * 1;					
+					player.SellItem(10, (int)small);
 				}
 				if (item.type == ItemType<MediumCME>())
 				{
 					medium = player.inventory[i].stack;
 					player.inventory[i].TurnToAir();
-					GetInstance<FactoryModWorld>().worldCME += (int)medium * 10;
+					player.SellItem(1000, (int)medium);
 				}
 				if (item.type == ItemType<LargeCME>())
 				{
 					large = player.inventory[i].stack;
 					player.inventory[i].TurnToAir();
-					GetInstance<FactoryModWorld>().worldCME += (int)large * 100;
+					player.SellItem(100000, (int)large);
 				}
 			}			
 			if (Main.playerInventory)
