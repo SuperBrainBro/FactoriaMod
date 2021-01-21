@@ -19,7 +19,7 @@ namespace FactoryMod.Items.MechanicalBlocks
 
         public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.ArmorStatue);
+            item.CloneDefaults(ItemID.Extractinator);
             item.createTile = TileType<EnergyUnraveler>();
             item.placeStyle = 0;
         }
