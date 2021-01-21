@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using Terraria.Utilities;
 using static Terraria.ModLoader.ModContent;
 
 namespace FactoryMod.NPCs.Town
@@ -77,15 +78,36 @@ namespace FactoryMod.NPCs.Town
 
         public override string GetChat()
         {
-            switch (Main.rand.Next(3))
-            {
-                case 0:
-                    return "Sometimes I feel like I'm different from everyone else here.";
-                case 1:
-                    return "What's your favorite color? My favorite colors are white and black.";
-                default:
-                    return "What? I don't have any arms or legs? Oh, don't be ridiculous!";
-            }
+            WeightedRandom<string> chat = new WeightedRandom<string>();
+            chat.Add("Hmmm... I always wanted to make a tree farm, but I never had enough tex to run it.");
+            chat.Add("Back in my day, we used to create automatic bunny harvesting systems.");
+            int npc = NPC.FindFirstNPC(NPCID.Guide);
+            npc = NPC.FindFirstNPC(NPCID.Merchant);
+            npc = NPC.FindFirstNPC(NPCID.Nurse);
+            npc = NPC.FindFirstNPC(NPCID.Painter);
+            npc = NPC.FindFirstNPC(NPCID.DyeTrader);
+            //Zoologist
+            //Gofler
+            npc = NPC.FindFirstNPC(NPCID.PartyGirl);
+            npc = NPC.FindFirstNPC(NPCID.Angler);
+            npc = NPC.FindFirstNPC(NPCID.Stylist);
+            npc = NPC.FindFirstNPC(NPCID.Demolitionist);
+            npc = NPC.FindFirstNPC(NPCID.Dryad);
+            npc = NPC.FindFirstNPC(NPCID.DD2Bartender);
+            npc = NPC.FindFirstNPC(NPCID.ArmsDealer);
+            npc = NPC.FindFirstNPC(NPCID.GoblinTinkerer);
+            npc = NPC.FindFirstNPC(NPCID.WitchDoctor);
+            npc = NPC.FindFirstNPC(NPCID.Clothier);
+            npc = NPC.FindFirstNPC(NPCID.Mechanic);
+            npc = NPC.FindFirstNPC(NPCID.TaxCollector);
+            npc = NPC.FindFirstNPC(NPCID.Pirate);
+            npc = NPC.FindFirstNPC(NPCID.Truffle);
+            npc = NPC.FindFirstNPC(NPCID.Wizard);
+            npc = NPC.FindFirstNPC(NPCID.Steampunker);
+            npc = NPC.FindFirstNPC(NPCID.Cyborg);
+            npc = NPC.FindFirstNPC(NPCID.SantaClaus);
+            //Princess
+            return chat;
         }
 
         public override void SetChatButtons(ref string button, ref string button2)
