@@ -12,7 +12,7 @@ namespace FactoryMod
 
         public override void NPCLoot(NPC npc)
         {
-            if (npc.lifeMax >= 25)
+            if (npc.lifeMax >= 5)
             {
                 if (npc.lifeMax <= 1999)
                 {
