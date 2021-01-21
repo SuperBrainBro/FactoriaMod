@@ -43,7 +43,7 @@ namespace FactoryMod
             int TEX = tag.GetInt("TEX");
             worldTEX = TEX;
         }
-
+        /*
         public override void NetSend(BinaryWriter writer)
         {
             int CME = worldCME;
@@ -61,5 +61,6 @@ namespace FactoryMod
             int TEX = reader.ReadByte();
             worldTEX = TEX;
         }
+        */
     }
 }
