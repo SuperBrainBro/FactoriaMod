@@ -39,43 +39,31 @@ namespace FactoryMod.Items.CME
 			bool flag1 = false;
 			bool flag2 = false;
 			bool flag3 = false;
-			for (int i = 58; i >= 0; i--)
+			for (int i = 49; i >= 0; i--)
 			{
 				Item item = player.inventory[i];
 				if (item.type == ItemType<SmallCME>())
 				{
 					small = player.inventory[i].stack;
 					player.inventory[i].TurnToAir();
+					GetInstance<FactoryModWorld>().worldCME += (int)large * 100;					
 				}
 				if (item.type == ItemType<MediumCME>())
 				{
 					medium = player.inventory[i].stack;
 					player.inventory[i].TurnToAir();
+					GetInstance<FactoryModWorld>().worldCME += (int)medium * 10;
 				}
 				if (item.type == ItemType<LargeCME>())
 				{
 					large = player.inventory[i].stack;
 					player.inventory[i].TurnToAir();
-				}
-			}
-			for (int num = 58; num >= 0; num--)
-			{
-				if (!flag3 && large > 0)
-				{
-					GetInstance<FactoryModWorld>().worldCME += (int)large * 100;
-					flag3 = true;
-				}
-				else if (!flag2 && medium > 0)
-				{
-					GetInstance<FactoryModWorld>().worldCME += (int)medium * 10;
-					flag2 = true;
-				}
-				else if (!flag1 && small > 0)
-				{
 					GetInstance<FactoryModWorld>().worldCME += (int)small * 1;
-					flag1 = true;
-					break;
 				}
+			}			
+			if (Main.playerInventory)
+			{
+				Recipe.FindRecipes();
 			}
 		}
 	}
