@@ -1,22 +1,15 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
+using FactoryMod.UI;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
-using Terraria.Graphics.Effects;
-using Terraria.Graphics.Shaders;
-using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
-using FactoryMod.UI;
-using FactoryMod;
 
 namespace FactoryMod
 {
-	public class FactoryMod : Mod
-	{
+    public class FactoryMod : Mod
+    {
         internal FactoryUI factoryUI;
         public UserInterface somethingInterface;
 
@@ -55,8 +48,8 @@ namespace FactoryMod
             return true;
         }
     }
-	public class FactoryUI : UIState
-	{
+    public class FactoryUI : UIState
+    {
         public static bool visible;
 
         private DragableUIPanel CMEPanel;
@@ -122,7 +115,7 @@ namespace FactoryMod
                 oldScale = Main.inventoryScale;
                 Recalculate();
             }
-            
+
             string CMEValue = ModContent.GetInstance<FactoryModWorld>().worldCME.ToString();
             CMEValueText.SetText(CMEValue + " C.M.E.");
 

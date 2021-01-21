@@ -1,6 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
@@ -19,7 +17,7 @@ namespace FactoryMod.Tiles
 
         public override bool NewRightClick(int i, int j)
         {
-            
+
             return base.NewRightClick(i, j);
         }
 
