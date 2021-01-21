@@ -16,7 +16,7 @@ namespace FactoryMod
             worldCME = 0;
             worldTEX = 0;
 
-            max = 21474;
+            max = 214748;
         }
         public override void PreUpdate()
         {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using FactoryMod.UI;
 using Microsoft.Xna.Framework;
@@ -48,6 +49,21 @@ namespace FactoryMod
                 somethingInterface.Draw(Main.spriteBatch, new GameTime());
             }
             return true;
+        }
+
+        public static string FormatNumber(long num)
+        {
+            long i = (long)Math.Pow(10, (int)Math.Max(0, Math.Log10(num) - 2));
+            num = num / i * i;
+
+            if (num >= 1000000000)
+                return (num / 1000000000D).ToString("0.##") + "B";
+            if (num >= 1000000)
+                return (num / 1000000D).ToString("0.##") + "M";
+            if (num >= 1000)
+                return (num / 1000D).ToString("0.##") + "K";
+
+            return num.ToString("#,0");
         }
     }
     public class FactoryUI : UIState
@@ -118,11 +134,13 @@ namespace FactoryMod
                 Recalculate();
             }
 
-            string CMEValue = GetInstance<FactoryModWorld>().worldCME.ToString();
+            string CMEValue = FactoryMod.FormatNumber(GetInstance<FactoryModWorld>().worldCME);
             CMEValueText.SetText(CMEValue + " C.M.E.");
 
-            string TEXValue = GetInstance<FactoryModWorld>().worldTEX.ToString();
+            string TEXValue = FactoryMod.FormatNumber(GetInstance<FactoryModWorld>().worldTEX);
             TEXValueText.SetText(TEXValue + " T.E.X.");
         }
+
+
     }
 }
