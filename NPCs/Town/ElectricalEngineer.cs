@@ -105,7 +105,6 @@ namespace FactoryMod.NPCs.Town
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
             shop.item[nextSlot].SetDefaults(ItemType<EnergyUnravelerItem>());
-            shop.item[nextSlot].shopCustomPrice = 20000;
             nextSlot++;
         }
 
@@ -124,18 +123,6 @@ namespace FactoryMod.NPCs.Town
         {
             cooldown = 30;
             randExtraCooldown = 30;
-        }
-
-        public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
-        {
-            //projType = ModContent.ProjectileType<SparklingBall>();
-            attackDelay = 1;
-        }
-
-        public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset)
-        {
-            multiplier = 12f;
-            randomOffset = 2f;
         }
     }
 }
