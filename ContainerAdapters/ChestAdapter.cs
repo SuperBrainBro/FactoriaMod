@@ -44,7 +44,7 @@ namespace FactoryMod.ContainerAdapters
             int targetPlayer = WhichPlayerInChest(chest);
             if (targetPlayer != -1)
             {
-                if (Main.netMode == 2)
+                if (Main.netMode == NetmodeID.Server)
                 {
                     ModPacket packet = NetRouter.GetPacketTo(this, mod);
                     packet.Send(targetPlayer);

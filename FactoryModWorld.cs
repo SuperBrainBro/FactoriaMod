@@ -37,10 +37,10 @@ namespace FactoryMod
 
         public override void Load(TagCompound tag)
         {
-            double CME = tag.GetInt("CME");
+            double CME = tag.GetDouble("CME");
             worldCME = CME;
 
-            double TEX = tag.GetInt("TEX");
+            double TEX = tag.GetDouble("TEX");
             worldTEX = TEX;
         }
     }
