@@ -38,41 +38,44 @@ namespace FactoryMod.Items.TEX
 			}
 			if (convertTime <= 0)
             {
-				if (GetInstance<FactoryModWorld>().worldCME <= 99)
-                {
-					GetInstance<FactoryModWorld>().worldCME -= 1;
-					GetInstance<FactoryModWorld>().worldTEX += 1;
-				}
-				else if (GetInstance<FactoryModWorld>().worldCME <= 999)
+				if (GetInstance<FactoryModWorld>().worldCME >= 1)
 				{
-					GetInstance<FactoryModWorld>().worldCME -= 10;
-					GetInstance<FactoryModWorld>().worldTEX += 10;
-				}
-				else if (GetInstance<FactoryModWorld>().worldCME <= 9999)
-				{
-					GetInstance<FactoryModWorld>().worldCME -= 100;
-					GetInstance<FactoryModWorld>().worldTEX += 100;
-				}
-				else if (GetInstance<FactoryModWorld>().worldCME <= 99999)
-				{
-					GetInstance<FactoryModWorld>().worldCME -= 1000;
-					GetInstance<FactoryModWorld>().worldTEX += 1000;
-				}
-				else if (GetInstance<FactoryModWorld>().worldCME <= 999999)
-				{
-					GetInstance<FactoryModWorld>().worldCME -= 10000;
-					GetInstance<FactoryModWorld>().worldTEX += 10000;
+					if (GetInstance<FactoryModWorld>().worldCME <= 99)
+					{
+						GetInstance<FactoryModWorld>().worldCME -= 1;
+						GetInstance<FactoryModWorld>().worldTEX += 1;
+					}
+					else if (GetInstance<FactoryModWorld>().worldCME <= 999)
+					{
+						GetInstance<FactoryModWorld>().worldCME -= 10;
+						GetInstance<FactoryModWorld>().worldTEX += 10;
+					}
+					else if (GetInstance<FactoryModWorld>().worldCME <= 9999)
+					{
+						GetInstance<FactoryModWorld>().worldCME -= 100;
+						GetInstance<FactoryModWorld>().worldTEX += 100;
+					}
+					else if (GetInstance<FactoryModWorld>().worldCME <= 99999)
+					{
+						GetInstance<FactoryModWorld>().worldCME -= 1000;
+						GetInstance<FactoryModWorld>().worldTEX += 1000;
+					}
+					else if (GetInstance<FactoryModWorld>().worldCME <= 999999)
+					{
+						GetInstance<FactoryModWorld>().worldCME -= 10000;
+						GetInstance<FactoryModWorld>().worldTEX += 10000;
 
-				}
-				else if (GetInstance<FactoryModWorld>().worldCME <= 9999999)
-				{
-					GetInstance<FactoryModWorld>().worldCME -= 100000;
-					GetInstance<FactoryModWorld>().worldTEX += 100000;
-				}
-				else if (GetInstance<FactoryModWorld>().worldCME <= 99999999)
-				{
-					GetInstance<FactoryModWorld>().worldCME -= 1000000;
-					GetInstance<FactoryModWorld>().worldTEX += 1000000;
+					}
+					else if (GetInstance<FactoryModWorld>().worldCME <= 9999999)
+					{
+						GetInstance<FactoryModWorld>().worldCME -= 100000;
+						GetInstance<FactoryModWorld>().worldTEX += 100000;
+					}
+					else if (GetInstance<FactoryModWorld>().worldCME <= 99999999)
+					{
+						GetInstance<FactoryModWorld>().worldCME -= 1000000;
+						GetInstance<FactoryModWorld>().worldTEX += 1000000;
+					}
 				}
 				convertTime = 100;
 			}
