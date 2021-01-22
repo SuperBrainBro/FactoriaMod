@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿//Credits: DRKV333
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.GameContent.UI;
@@ -17,7 +18,7 @@ namespace FactoryMod.UI
         private UIText titleText;
         private Item[] fakeInv = new Item[11];
 
-        private const string NotSetTextKey = "Mods.MechTransfer.UI.Hover.NotSet";
+        private const string NotSetTextKey = "Mods.FactoryMod.UI.Hover.NotSet";
 
         public override void OnInitialize()
         {

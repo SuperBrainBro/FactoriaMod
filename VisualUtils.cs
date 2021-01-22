@@ -11,7 +11,7 @@ namespace FactoryMod
     {
         private const float dustVelocity = 1.5f;
 
-        private static FactoryMod mod = (FactoryMod)ModLoader.GetMod("MechTransfer");
+        private static FactoryMod mod = (FactoryMod)ModLoader.GetMod("FactoryMod");
 
         public static void UnwindVisuals(Dictionary<Point16, byte> visited, Point16 startPoint)
         {
@@ -31,7 +31,7 @@ namespace FactoryMod
                     case TransferAgent.Direction.stop: return;
                 }
 
-                if (Main.netMode == 0)
+                if (Main.netMode == NetmodeID.SinglePlayer)
                 {
                     CreateVisual(p, dir);
                 }

@@ -50,7 +50,7 @@ namespace FactoryMod.ContainerAdapters
                     packet.Send(targetPlayer);
                     Main.player[targetPlayer].chest = -1;
                 }
-                else if (Main.netMode == 0)
+                else if (Main.netMode == NetmodeID.SinglePlayer)
                     Recipe.FindRecipes();
             }
         }

@@ -8,6 +8,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using Terraria.ID;
 
 namespace FactoryMod
 {
@@ -47,11 +48,6 @@ namespace FactoryMod
             try
             {
                 SearchForTarget(startX, startY, clone);
-            }
-            catch (Exception e)
-            {
-                Main.NewText("An exception has occurred at MechTransfer.TransferUtils.SearchForTarget (Please look at the log in Documents/My Games/Terraria/ModLoader/Logs)", Color.Red);
-               
             }
             finally
             {
@@ -190,7 +186,7 @@ namespace FactoryMod
 
         public void HandlePacket(BinaryReader reader, int WhoAmI)
         {
-            if (Main.netMode != 1)
+            if (Main.netMode != NetmodeID.MultiplayerClient)
                 return;
 
             VisualUtils.CreateVisual(reader.ReadPackedVector2().ToPoint16(), (Direction)reader.ReadByte());

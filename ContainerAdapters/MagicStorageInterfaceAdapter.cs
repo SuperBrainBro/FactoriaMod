@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
+using Terraria.ID;
 
 namespace FactoryMod.ContainerAdapters
 {
@@ -28,11 +29,11 @@ namespace FactoryMod.ContainerAdapters
 
         private void HandleStorageItemChange(TEStorageHeart heart)
         {
-            if (Main.netMode == 2)
+            if (Main.netMode == NetmodeID.Server)
             {
                 NetHelper.SendRefreshNetworkItems(heart.ID);
             }
-            else if (Main.netMode == 0)
+            else if (Main.netMode == NetmodeID.SinglePlayer)
             {
                 StorageGUI.RefreshItems();
             }

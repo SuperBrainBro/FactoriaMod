@@ -12,15 +12,14 @@ namespace FactoryMod.Items.MechanicalBlocks
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Energy Unraveler");
-            Tooltip.SetDefault("Consumes C.M.E.\nConverts C.M.E into Tex, and deposits it into the world's wireless Tex storage.");
+            Tooltip.SetDefault("Consumes C.M.E.\nConverts C.M.E into Tex, and deposits it into the world's wireless Tex storage.\nRight click to activate.");
         }
 
         public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.Extractinator);
             item.createTile = TileType<EnergyUnraveler>();
             item.placeStyle = 0;
-            item.value = Item.sellPrice(gold: 2);
+            item.value = 1000;
         }
 
         public override void AddRecipes()
