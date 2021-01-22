@@ -1,8 +1,7 @@
-using Terraria.ModLoader;
 using FactoryMod.Items.CME;
 using FactoryMod.Items.TEX;
 using Terraria;
-
+using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 namespace FactoryMod
 {

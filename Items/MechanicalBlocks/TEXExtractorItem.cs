@@ -1,5 +1,4 @@
-﻿using FactoryMod.Items.CME;
-using FactoryMod.Tiles.TEX;
+﻿using FactoryMod.Tiles.TEX;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;

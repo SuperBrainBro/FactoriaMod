@@ -1,6 +1,4 @@
 ﻿//Credits: DRKV333
-using MagicStorage;
-using MagicStorage.Components;
 using System;
 using System.Collections.Generic;
 using Terraria;
