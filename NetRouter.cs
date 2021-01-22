@@ -80,7 +80,7 @@ namespace FactoryMod
                 packet.Write(prefix);
 
             if (bigIds)
-                packet.Write((ushort)id);
+                packet.Write((UInt16)id);
             else
                 packet.Write((byte)id);
 

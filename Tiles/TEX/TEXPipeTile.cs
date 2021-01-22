@@ -1,7 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using FactoryMod.Items;
+using System.Collections.Generic;
 using Terraria;
+using Terraria.DataStructures;
+using Terraria.Enums;
 //Credits: DRKV333
+using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ObjectData;
 using static Terraria.ModLoader.ModContent;
 namespace FactoryMod.Tiles.TEX
 {

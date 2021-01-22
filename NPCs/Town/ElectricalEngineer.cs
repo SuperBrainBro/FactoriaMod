@@ -1,5 +1,4 @@
 ﻿using FactoryMod.Items.MechanicalBlocks;
-using FactoryMod.Items.TEX;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -83,9 +82,6 @@ namespace FactoryMod.NPCs.Town
             chat.Add("Hmmm... I always wanted to make a tree farm, but I never had enough tex to run it.");
             chat.Add("Back in my day, we used to create automatic bunny harvesting systems.");
             int npc = NPC.FindFirstNPC(NPCID.Guide);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.Merchant);
             if (npc >= 0 && Main.rand.NextBool(4))
             {
@@ -93,91 +89,28 @@ namespace FactoryMod.NPCs.Town
                     " order to farm for C.M.E.");
             }
             npc = NPC.FindFirstNPC(NPCID.Nurse);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.Painter);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.DyeTrader);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             //Zoologist
             //Gofler
             npc = NPC.FindFirstNPC(NPCID.PartyGirl);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.Angler);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.Stylist);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.Demolitionist);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.Dryad);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.DD2Bartender);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.ArmsDealer);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.GoblinTinkerer);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.WitchDoctor);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.Clothier);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.Mechanic);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.TaxCollector);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.Pirate);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.Truffle);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.Wizard);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.Steampunker);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.Cyborg);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             npc = NPC.FindFirstNPC(NPCID.SantaClaus);
-            if (npc >= 0 && Main.rand.NextBool(4))
-            {
-            }
             //Princess
             return chat;
         }
@@ -195,12 +128,6 @@ namespace FactoryMod.NPCs.Town
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
             shop.item[nextSlot].SetDefaults(ItemType<EnergyUnravelerItem>());
-            nextSlot++;
-            shop.item[nextSlot].SetDefaults(ItemType<TEXExtractorItem>());
-            nextSlot++;
-            shop.item[nextSlot].SetDefaults(ItemType<PortableEnergyUnraveler>());
-            nextSlot++;
-            shop.item[nextSlot].SetDefaults(ItemType<TEXBankCleaner>());
             nextSlot++;
         }
 

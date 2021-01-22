@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using FactoryMod.ContainerAdapters;
+using Microsoft.Xna.Framework;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using FactoryMod.ContainerAdapters;
 using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
+using Terraria.ID;
 
 namespace FactoryMod
 {

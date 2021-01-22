@@ -1,18 +1,20 @@
 using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Reflection;
-using FactoryMod.ContainerAdapters;
 using FactoryMod.UI;
+using FactoryMod.Items;
+using FactoryMod.Tiles;
+using FactoryMod.ContainerAdapters;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.UI;
-using static Terraria.ModLoader.ModContent;
+using System.Linq.Expressions;
+using System.Reflection;
 using EnumerateItemsDelegate = System.Func<int, int, System.Collections.Generic.IEnumerable<System.Tuple<Terraria.Item, object>>>;
 using InjectItemDelegate = System.Func<int, int, Terraria.Item, bool>;
 using TakeItemDelegate = System.Action<int, int, object, int>;
+using static Terraria.ModLoader.ModContent;
 
 namespace FactoryMod
 {
