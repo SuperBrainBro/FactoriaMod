@@ -1,4 +1,6 @@
-﻿using FactoryMod.Items.MechanicalBlocks;
+﻿using FactoryMod.Items.CME;
+using FactoryMod.Items.TEX;
+
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -127,7 +129,18 @@ namespace FactoryMod.NPCs.Town
 
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
-            shop.item[nextSlot].SetDefaults(ItemType<EnergyUnravelerItem>());
+            shop.item[nextSlot].SetDefaults(ItemType<WirelessCMEBankItem>());
+            nextSlot++;
+            shop.item[nextSlot].SetDefaults(ItemType<AutomaticCMEMerchant>());
+            nextSlot++;
+            shop.item[nextSlot].SetDefaults(ItemType<PortableEnergyUnraveler>());
+            nextSlot++;
+
+
+            //At the end of the shop.
+            shop.item[nextSlot].SetDefaults(ItemType<CMEBankCleaner>());
+            nextSlot++;
+            shop.item[nextSlot].SetDefaults(ItemType<TEXBankCleaner>());
             nextSlot++;
         }
 
