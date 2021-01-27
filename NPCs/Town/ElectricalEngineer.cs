@@ -83,37 +83,30 @@ namespace FactoryMod.NPCs.Town
             WeightedRandom<string> chat = new WeightedRandom<string>();
             chat.Add("Hmmm... I always wanted to make a tree farm, but I never had enough tex to run it.");
             chat.Add("Back in my day, we used to create automatic bunny harvesting systems.");
-            int npc = NPC.FindFirstNPC(NPCID.Guide);
-            npc = NPC.FindFirstNPC(NPCID.Merchant);
-            if (npc >= 0 && Main.rand.NextBool(4))
+
+            if (NPC.downedBoss2)
             {
-                chat.Add(Main.npc[npc].GivenName + " and I used to be best buds back in the day. We used to fight multiple eye of Cthulhus in" +
-                    " order to farm for C.M.E.");
+                if (!WorldGen.crimson)
+                {
+                    chat.Add("Have you already got a " + GetInstance<DarkCME>().DisplayName + "? No? Then go to Corruption and farm it!");
+                }
+                else
+                {
+                    chat.Add("Have you already got a " + GetInstance<FleshyCME>().DisplayName + "? No? Then go to Crimson and farm it!");
+                }
             }
-            npc = NPC.FindFirstNPC(NPCID.Nurse);
-            npc = NPC.FindFirstNPC(NPCID.Painter);
-            npc = NPC.FindFirstNPC(NPCID.DyeTrader);
+
+            int npcPresent = NPC.FindFirstNPC(NPCID.Merchant);
+            if (npcPresent >= 0 && Main.rand.NextBool(4))
+            {
+                chat.Add(Main.npc[npcPresent].GivenName + " the Merchant and I used to be best buds back in the day. We used to fight multiple eye of" +
+                    " Cthulhus in order to farm for C.M.E.");
+            }
             //Zoologist
-            //Gofler
-            npc = NPC.FindFirstNPC(NPCID.PartyGirl);
-            npc = NPC.FindFirstNPC(NPCID.Angler);
-            npc = NPC.FindFirstNPC(NPCID.Stylist);
-            npc = NPC.FindFirstNPC(NPCID.Demolitionist);
-            npc = NPC.FindFirstNPC(NPCID.Dryad);
-            npc = NPC.FindFirstNPC(NPCID.DD2Bartender);
-            npc = NPC.FindFirstNPC(NPCID.ArmsDealer);
-            npc = NPC.FindFirstNPC(NPCID.GoblinTinkerer);
-            npc = NPC.FindFirstNPC(NPCID.WitchDoctor);
-            npc = NPC.FindFirstNPC(NPCID.Clothier);
-            npc = NPC.FindFirstNPC(NPCID.Mechanic);
-            npc = NPC.FindFirstNPC(NPCID.TaxCollector);
-            npc = NPC.FindFirstNPC(NPCID.Pirate);
-            npc = NPC.FindFirstNPC(NPCID.Truffle);
-            npc = NPC.FindFirstNPC(NPCID.Wizard);
-            npc = NPC.FindFirstNPC(NPCID.Steampunker);
-            npc = NPC.FindFirstNPC(NPCID.Cyborg);
-            npc = NPC.FindFirstNPC(NPCID.SantaClaus);
-            //Princess
+            if (npc.GivenName == "Arcane Fox" && (Main.moonPhase == 0 || Main.bloodMoon))
+            {
+                chat.Add("Chat.FactoryMod.Engineer.Zoologist.Chat1");
+            }
             return chat;
         }
 
