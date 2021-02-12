@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using FactoryMod.UI;
-using FactoryMod.Items;
-using FactoryMod.Tiles;
 using FactoryMod.ContainerAdapters;
 using Microsoft.Xna.Framework;
 using Terraria;
