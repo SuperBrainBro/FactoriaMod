@@ -107,7 +107,7 @@ namespace FactoryMod.Tiles.TEX.Statues
 			DisplayName.SetDefault("Mechanical Armed Zombie Statue");
 			Tooltip.SetDefault("Can be activated with wire.\nConsumes 5 T.E.X. per activation.\nMonster's regular loot table is not affected.\nSpawns all variants of the monster.");
 		}
-;
+
 		public override void SetDefaults() {
 			item.CloneDefaults(ItemID.ArmorStatue);
 			item.createTile = TileType<MechArmedZombieStatue>();
