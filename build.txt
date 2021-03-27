@@ -2,7 +2,6 @@ displayName = Lite's Factoria
 author = Vincent Jenei (Lite#4249), Fox
 version = 0.1
 includePDB = false
-weakReferences = MagicStorage@0.4.3.1
 buildIgnore = .gitignore, .gitattributes, *.csproj*, *.sln, *.targets, *.py, .git/*, .vs/*, bin/*, obj/*, *.xcf, lib/ReLogic.dll, Content/*
 hideCode = true
 hideResources = true

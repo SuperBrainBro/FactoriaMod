@@ -8,6 +8,8 @@ You can obtain Tex by defeating monsters, who drop condensed monster energy (C.M
 Bosses and other strong monsters can contain more monster energy.
 A mechanical statue can be created, which spawns in an actual mob which drops loot, however, these statues cost Tex to activate.
 
+Tex Sentries, like the Old Man's Army Sentries except it consumes TEX and doesnt despawn.
+
 Tree Harvesters, a new mechanical block can also be made which (when supplied with enough Tex) breaks nearby trees and stores the wood it harvests.Wood can be deposited into an Igniter, which is a new mechanical block that creates Tex from wood.
 
 Automatic Extractinators, a new mechanical block that when supplied with silt/slush/fossils and Tex, works the same as the regular extractinators, but without player contact.
@@ -37,4 +39,4 @@ Bottom line is, I need feedback. Please join the discord to help out with this m
 
 Change-Log:
 
-v0.1:
+v0.1 (Initial Release):
