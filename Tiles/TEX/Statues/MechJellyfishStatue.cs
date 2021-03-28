@@ -18,6 +18,7 @@ namespace FactoryMod.Tiles.TEX.Statues
 {
 	public class MechJellyfishStatue : ModTile
 	{
+		public int TEXCost = 5;
 		public override void SetDefaults() {
 			Main.tileFrameImportant[Type] = true;
 			Main.tileObsidianKill[Type] = true;
@@ -37,62 +38,63 @@ namespace FactoryMod.Tiles.TEX.Statues
 
 		public override void HitWire(int i, int j)
 		{
-			int y = j - Main.tile[i, j].frameY / 18;
-			int x = i - Main.tile[i, j].frameX / 18;
-
-			Wiring.SkipWire(x, y);
-			Wiring.SkipWire(x, y + 1);
-			Wiring.SkipWire(x, y + 2);
-			Wiring.SkipWire(x + 1, y);
-			Wiring.SkipWire(x + 1, y + 1);
-			Wiring.SkipWire(x + 1, y + 2);
-
-			int spawnX = x * 16 + 16;
-			int spawnY = (y + 3) * 16;
-
-			int npcIndex = -1;
-			if (Wiring.CheckMech(x, y, 10))
+			if (GetInstance<FactoryModWorld>().worldTEX >= TEXCost)
 			{
-                // Spawning all the variants.
-                int whichMob = -1;
-                if (!Main.hardMode)
-                {
-                    whichMob = (int)Main.rand.NextFloat(2);
-                }
-				else
-                {
-					whichMob = (int)Main.rand.NextFloat(3);
-                }
+				int y = j - Main.tile[i, j].frameY / 18;
+				int x = i - Main.tile[i, j].frameX / 18;
 
-				//Pre Hardmode
-				if (whichMob <= 1)
-                {
-					npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.BlueJellyfish);
-				}
-                if (whichMob <= 2)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.PinkJellyfish);
-                }
+				Wiring.SkipWire(x, y);
+				Wiring.SkipWire(x, y + 1);
+				Wiring.SkipWire(x, y + 2);
+				Wiring.SkipWire(x + 1, y);
+				Wiring.SkipWire(x + 1, y + 1);
+				Wiring.SkipWire(x + 1, y + 2);
 
-				//Hardmode
-				if (whichMob <= 3)
+				int spawnX = x * 16 + 16;
+				int spawnY = (y + 3) * 16;
+
+				int npcIndex = -1;
+				if (Wiring.CheckMech(x, y, 10))
 				{
-					npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.GreenJellyfish);
-				}
-			}
-			if (npcIndex >= 0)
-			{
-				Main.npc[npcIndex].value = 0f;
-				Main.npc[npcIndex].npcSlots = 0f;
-				Main.npc[npcIndex].SpawnedFromStatue = false;
+					// Spawning all the variants.
+					int whichMob = -1;
+					if (!Main.hardMode)
+					{
+						whichMob = (int)Main.rand.NextFloat(2);
+					}
+					else
+					{
+						whichMob = (int)Main.rand.NextFloat(3);
+					}
 
-				//
-				// Consume TEX.
-				//
-				GetInstance<FactoryModWorld>().worldTEX -= 5;
-				//
-				// Consume TEX.
-				//
+					//Pre Hardmode
+					if (whichMob <= 1)
+					{
+						npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.BlueJellyfish);
+					}
+					if (whichMob <= 2)
+					{
+						npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.PinkJellyfish);
+					}
+
+					//Hardmode
+					if (whichMob <= 3)
+					{
+						npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.GreenJellyfish);
+					}
+				}
+				if (npcIndex >= 0)
+				{
+					Main.npc[npcIndex].SpawnedFromStatue = false;
+
+					//
+					// Consume TEX.
+					//
+					GetInstance<FactoryModWorld>().worldTEX -= TEXCost;
+					//
+					// Consume TEX.
+					//
+				}
 			}
 		}
 	}

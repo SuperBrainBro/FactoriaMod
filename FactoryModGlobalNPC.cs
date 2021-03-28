@@ -12,49 +12,75 @@ namespace FactoryMod
 
         public override void NPCLoot(NPC npc)
         {
-            if (npc.lifeMax >= 5)
+            if (!npc.SpawnedFromStatue)
             {
-                if (npc.lifeMax <= 1999)
+                if (Main.rand.NextBool(3))
                 {
-                    if (Main.rand.NextBool(4) || npc.boss)
-                    {
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 300), 0));
-                    }
-                    else if (Main.rand.NextBool(2))
-                    {
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 300), 0));
-                    }
+                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 300), 0));
                 }
-                else if (npc.lifeMax <= 19999)
+                else if (Main.rand.NextBool(5))
                 {
-                    if (Main.rand.NextBool(4) || npc.boss)
+                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 300), 0));
+                }
+                else if (Main.rand.NextBool(8))
+                {
+                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 300), 0));
+                }
+                else if (Main.rand.NextBool(15))
+                {
+                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 300), 0));
+                }
+                if (npc.lifeMax >= 5)
+                {
+                    if (npc.lifeMax <= 1999)
                     {
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<MediumCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 800), 0));
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 600), 0));
+                        if (Main.rand.NextBool(4) || npc.boss)
+                        {
+                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 300), 0));
+                        }
+                        else if (Main.rand.NextBool(2))
+                        {
+                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 300), 0));
+                        }
+                    }
+                    else if (npc.lifeMax <= 19999)
+                    {
+                        if (Main.rand.NextBool(4) || npc.boss)
+                        {
+                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<MediumCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 800), 0));
+                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 600), 0));
 
+                        }
+                        else if (Main.rand.NextBool(2) || npc.boss)
+                        {
+                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<MediumCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 800), 0));
+                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 600), 0));
+                        }
                     }
-                    else if (Main.rand.NextBool(2) || npc.boss)
+                    else if (npc.lifeMax >= 19999)
                     {
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<MediumCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 800), 0));
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 600), 0));
+                        if (Main.rand.NextBool(4) || npc.boss)
+                        {
+                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<LargeCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 2400), 0));
+                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<MediumCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 1600), 0));
+                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 1200), 0));
+                        }
+                        else if (Main.rand.NextBool(2) || npc.boss)
+                        {
+                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<LargeCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 2400), 0));
+                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<MediumCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 1600), 0));
+                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 1200), 0));
+                        }
                     }
                 }
-                else if (npc.lifeMax >= 19999)
+            }
+            else
+            {
+                if (Main.rand.NextBool(6))
                 {
-                    if (Main.rand.NextBool(4) || npc.boss)
-                    {
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<LargeCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 2400), 0));
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<MediumCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 1600), 0));
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 1200), 0));
-                    }
-                    else if (Main.rand.NextBool(2) || npc.boss)
-                    {
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<LargeCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 2400), 0));
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<MediumCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 1600), 0));
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1 + (int)Math.Round((double)(npc.lifeMax / 1200), 0));
-                    }
+                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemType<SmallCME>(), 1);
                 }
-            }          
+            }
         }
     }
 }

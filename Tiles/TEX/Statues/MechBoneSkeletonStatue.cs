@@ -18,6 +18,7 @@ namespace FactoryMod.Tiles.TEX.Statues
 {
 	public class MechBoneSkeletonStatue : ModTile
 	{
+		public int TEXCost = 3;
 		public override void SetDefaults() {
 			Main.tileFrameImportant[Type] = true;
 			Main.tileObsidianKill[Type] = true;
@@ -37,57 +38,58 @@ namespace FactoryMod.Tiles.TEX.Statues
 
 		public override void HitWire(int i, int j)
 		{
-			int y = j - Main.tile[i, j].frameY / 18;
-			int x = i - Main.tile[i, j].frameX / 18;
-
-			Wiring.SkipWire(x, y);
-			Wiring.SkipWire(x, y + 1);
-			Wiring.SkipWire(x, y + 2);
-			Wiring.SkipWire(x + 1, y);
-			Wiring.SkipWire(x + 1, y + 1);
-			Wiring.SkipWire(x + 1, y + 2);
-
-			int spawnX = x * 16 + 16;
-			int spawnY = (y + 3) * 16;
-
-			int npcIndex = -1;
-			if (Wiring.CheckMech(x, y, 10))
+			if (GetInstance<FactoryModWorld>().worldTEX >= TEXCost)
 			{
-				// Spawning all the variants.
-				int whichMob = -1;
-                whichMob = (int)Main.rand.NextFloat(4);
+				int y = j - Main.tile[i, j].frameY / 18;
+				int x = i - Main.tile[i, j].frameX / 18;
 
-				//Pre Hardmode
-				if (whichMob <= 1)
-                {
-					npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.BoneThrowingSkeleton);
-				}
-				if (whichMob <= 2)
-				{
-					npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.BoneThrowingSkeleton2);
-				}
-				if (whichMob <= 3)
-				{
-					npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.BoneThrowingSkeleton3);
-				}
-				if (whichMob <= 4)
-				{
-					npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.BoneThrowingSkeleton4);
-				}
-			}
-			if (npcIndex >= 0)
-			{
-				Main.npc[npcIndex].value = 0f;
-				Main.npc[npcIndex].npcSlots = 0f;
-				Main.npc[npcIndex].SpawnedFromStatue = false;
+				Wiring.SkipWire(x, y);
+				Wiring.SkipWire(x, y + 1);
+				Wiring.SkipWire(x, y + 2);
+				Wiring.SkipWire(x + 1, y);
+				Wiring.SkipWire(x + 1, y + 1);
+				Wiring.SkipWire(x + 1, y + 2);
 
-				//
-				// Consume TEX.
-				//
-				GetInstance<FactoryModWorld>().worldTEX -= 5;
-				//
-				// Consume TEX.
-				//
+				int spawnX = x * 16 + 16;
+				int spawnY = (y + 3) * 16;
+
+				int npcIndex = -1;
+				if (Wiring.CheckMech(x, y, 10))
+				{
+					// Spawning all the variants.
+					int whichMob = -1;
+					whichMob = (int)Main.rand.NextFloat(4);
+
+					//Pre Hardmode
+					if (whichMob <= 1)
+					{
+						npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.BoneThrowingSkeleton);
+					}
+					if (whichMob <= 2)
+					{
+						npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.BoneThrowingSkeleton2);
+					}
+					if (whichMob <= 3)
+					{
+						npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.BoneThrowingSkeleton3);
+					}
+					if (whichMob <= 4)
+					{
+						npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.BoneThrowingSkeleton4);
+					}
+				}
+				if (npcIndex >= 0)
+				{
+					Main.npc[npcIndex].SpawnedFromStatue = false;
+
+					//
+					// Consume TEX.
+					//
+					GetInstance<FactoryModWorld>().worldTEX -= TEXCost;
+					//
+					// Consume TEX.
+					//
+				}
 			}
 		}
 	}
@@ -96,7 +98,7 @@ namespace FactoryMod.Tiles.TEX.Statues
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Mechanical Bone Skeleton Statue");
-			Tooltip.SetDefault("Can be activated with wire.\nConsumes 5 T.E.X. per activation.\nMonster's regular loot table is not affected.\nSpawns all variants of the monster.");
+			Tooltip.SetDefault("Can be activated with wire.\nConsumes 3 T.E.X. per activation.\nMonster's regular loot table is not affected.\nSpawns all variants of the monster.");
 		}
 
 		public override void SetDefaults() {

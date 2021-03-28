@@ -17,8 +17,9 @@ using static Terraria.ModLoader.ModContent;
 namespace FactoryMod.Tiles.TEX.Statues
 {
 	public class MechSlimeStatue : ModTile
-	{
-		public override void SetDefaults() {
+    {
+        public int TEXCost = 2;
+        public override void SetDefaults() {
 			Main.tileFrameImportant[Type] = true;
 			Main.tileObsidianKill[Type] = true;
 
@@ -36,161 +37,162 @@ namespace FactoryMod.Tiles.TEX.Statues
 		}
 
 		public override void HitWire(int i, int j)
-		{
-			int y = j - Main.tile[i, j].frameY / 18;
-			int x = i - Main.tile[i, j].frameX / 18;
-
-			Wiring.SkipWire(x, y);
-			Wiring.SkipWire(x, y + 1);
-			Wiring.SkipWire(x, y + 2);
-			Wiring.SkipWire(x + 1, y);
-			Wiring.SkipWire(x + 1, y + 1);
-			Wiring.SkipWire(x + 1, y + 2);
-
-			int spawnX = x * 16 + 16;
-			int spawnY = (y + 3) * 16;
-
-			int npcIndex = -1;
-            if (Wiring.CheckMech(x, y, 10))
+        {
+            if (GetInstance<FactoryModWorld>().worldTEX >= TEXCost)
             {
-                // Spawning all the variants.
-                int whichMob = -1;
-                if (Main.hardMode)
-                {
-                    whichMob = (int)Main.rand.NextFloat(20);
-                }
-                else
-                {
-                    whichMob = (int)Main.rand.NextFloat(14);
-                }
+                int y = j - Main.tile[i, j].frameY / 18;
+                int x = i - Main.tile[i, j].frameX / 18;
 
-                //Pre Hardmode
-                if (whichMob <= 1)
+                Wiring.SkipWire(x, y);
+                Wiring.SkipWire(x, y + 1);
+                Wiring.SkipWire(x, y + 2);
+                Wiring.SkipWire(x + 1, y);
+                Wiring.SkipWire(x + 1, y + 1);
+                Wiring.SkipWire(x + 1, y + 2);
+
+                int spawnX = x * 16 + 16;
+                int spawnY = (y + 3) * 16;
+
+                int npcIndex = -1;
+                if (Wiring.CheckMech(x, y, 10))
                 {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.GreenSlime);
-                }
-                if (whichMob <= 2)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.BlueSlime);
-                }
-                if (whichMob <= 3)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.RedSlime);
-                }
-                if (whichMob <= 4)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.PurpleSlime);
-                }
-                if (whichMob <= 5)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.YellowSlime);
-                }
-                if (whichMob <= 6)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.BlackSlime);
-                }
-                if (whichMob <= 7)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.Pinky);
-                }
-                if (whichMob <= 8)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.MotherSlime);
-                }
-                if (whichMob <= 9)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.UmbrellaSlime);
-                }
-                if (whichMob <= 10)
-                {
-                    if (!Main.expertMode)
+                    // Spawning all the variants.
+                    int whichMob = -1;
+                    if (Main.hardMode)
                     {
-                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.IceSlime);
+                        whichMob = (int)Main.rand.NextFloat(20);
                     }
                     else
                     {
-                        if (Main.rand.NextBool(2))
-                        {
-                            npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.SpikedIceSlime);
-                        }
-                        else
+                        whichMob = (int)Main.rand.NextFloat(14);
+                    }
+
+                    //Pre Hardmode
+                    if (whichMob <= 1)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.GreenSlime);
+                    }
+                    if (whichMob <= 2)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.BlueSlime);
+                    }
+                    if (whichMob <= 3)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.RedSlime);
+                    }
+                    if (whichMob <= 4)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.PurpleSlime);
+                    }
+                    if (whichMob <= 5)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.YellowSlime);
+                    }
+                    if (whichMob <= 6)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.BlackSlime);
+                    }
+                    if (whichMob <= 7)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.Pinky);
+                    }
+                    if (whichMob <= 8)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.MotherSlime);
+                    }
+                    if (whichMob <= 9)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.UmbrellaSlime);
+                    }
+                    if (whichMob <= 10)
+                    {
+                        if (!Main.expertMode)
                         {
                             npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.IceSlime);
                         }
-                    }
-                }
-                if (whichMob <= 11)
-                {
-                    if (!Main.expertMode)
-                    {
-                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.JungleSlime);
-                    }
-                    else
-                    {
-                        if (Main.rand.NextBool(2))
-                        {
-                            npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.SpikedJungleSlime);
-                        }
                         else
+                        {
+                            if (Main.rand.NextBool(2))
+                            {
+                                npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.SpikedIceSlime);
+                            }
+                            else
+                            {
+                                npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.IceSlime);
+                            }
+                        }
+                    }
+                    if (whichMob <= 11)
+                    {
+                        if (!Main.expertMode)
                         {
                             npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.JungleSlime);
                         }
+                        else
+                        {
+                            if (Main.rand.NextBool(2))
+                            {
+                                npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.SpikedJungleSlime);
+                            }
+                            else
+                            {
+                                npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.JungleSlime);
+                            }
+                        }
+                    }
+                    if (whichMob <= 12)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.SandSlime);
+                    }
+                    if (whichMob <= 13)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.DungeonSlime);
+                    }
+                    if (whichMob <= 14)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.LavaSlime);
+                    }
+
+                    //Hardmode
+                    if (whichMob <= 15)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.ToxicSludge);
+                    }
+                    if (whichMob <= 16)
+                    {
+                        int type = WorldGen.crimson ? NPCID.Crimslime : NPCID.CorruptSlime;
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, type);
+                    }
+                    if (whichMob <= 17)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.Slimer);
+                    }
+                    if (whichMob <= 18)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.RainbowSlime);
+                    }
+                    if (whichMob <= 19)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.IlluminantSlime);
+                    }
+                    if (whichMob <= 20)
+                    {
+                        npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.Gastropod);
                     }
                 }
-                if (whichMob <= 12)
+                if (npcIndex >= 0)
                 {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.SandSlime);
-                }
-                if (whichMob <= 13)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.DungeonSlime);
-                }
-                if (whichMob <= 14)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.LavaSlime);
-                }
+                    Main.npc[npcIndex].SpawnedFromStatue = false;
 
-                //Hardmode
-                if (whichMob <= 15)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.ToxicSludge);
-                }
-                if (whichMob <= 16)
-                {
-                    int type = WorldGen.crimson ? NPCID.Crimslime : NPCID.CorruptSlime;
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, type);
-                }
-                if (whichMob <= 17)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.Slimer);
-                }
-                if (whichMob <= 18)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.RainbowSlime);
-                }
-                if (whichMob <= 19)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.IlluminantSlime);
-                }
-                if (whichMob <= 20)
-                {
-                    npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.Gastropod);
+                    //
+                    // Consume TEX.
+                    //
+                    GetInstance<FactoryModWorld>().worldTEX -= TEXCost;
+                    //
+                    // Consume TEX.
+                    //
                 }
             }
-			if (npcIndex >= 0)
-			{
-				Main.npc[npcIndex].value = 0f;
-				Main.npc[npcIndex].npcSlots = 0f;
-				Main.npc[npcIndex].SpawnedFromStatue = false;
-
-				//
-				// Consume TEX.
-				//
-				GetInstance<FactoryModWorld>().worldTEX -= 5;
-				//
-				// Consume TEX.
-				//
-			}
 		}
 	}
 
@@ -198,7 +200,7 @@ namespace FactoryMod.Tiles.TEX.Statues
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Mechanical Slime Statue");
-			Tooltip.SetDefault("Can be activated with wire.\nConsumes 5 T.E.X. per activation.\nMonster's regular loot table is not affected.\nSpawns all variants of the monster.");
+			Tooltip.SetDefault("Can be activated with wire.\nConsumes 2 T.E.X. per activation.\nMonster's regular loot table is not affected.\nSpawns all variants of the monster.");
 		}
 
 		public override void SetDefaults() {

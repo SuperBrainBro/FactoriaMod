@@ -18,6 +18,7 @@ namespace FactoryMod.Tiles.TEX.Statues
 {
 	public class MechWallCreeperStatue : ModTile
 	{
+		public int TEXCost = 5;
 		public override void SetDefaults() {
 			Main.tileFrameImportant[Type] = true;
 			Main.tileObsidianKill[Type] = true;
@@ -37,37 +38,38 @@ namespace FactoryMod.Tiles.TEX.Statues
 
 		public override void HitWire(int i, int j)
 		{
-			int y = j - Main.tile[i, j].frameY / 18;
-			int x = i - Main.tile[i, j].frameX / 18;
-
-			Wiring.SkipWire(x, y);
-			Wiring.SkipWire(x, y + 1);
-			Wiring.SkipWire(x, y + 2);
-			Wiring.SkipWire(x + 1, y);
-			Wiring.SkipWire(x + 1, y + 1);
-			Wiring.SkipWire(x + 1, y + 2);
-
-			int spawnX = x * 16 + 16;
-			int spawnY = (y + 3) * 16;
-
-			int npcIndex = -1;
-			if (Wiring.CheckMech(x, y, 10))
+			if (GetInstance<FactoryModWorld>().worldTEX >= TEXCost)
 			{
-				npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.WallCreeper);
-			}
-			if (npcIndex >= 0)
-			{
-				Main.npc[npcIndex].value = 0f;
-				Main.npc[npcIndex].npcSlots = 0f;
-				Main.npc[npcIndex].SpawnedFromStatue = false;
+				int y = j - Main.tile[i, j].frameY / 18;
+				int x = i - Main.tile[i, j].frameX / 18;
 
-				//
-				// Consume TEX.
-				//
-				GetInstance<FactoryModWorld>().worldTEX -= 5;
-				//
-				// Consume TEX.
-				//
+				Wiring.SkipWire(x, y);
+				Wiring.SkipWire(x, y + 1);
+				Wiring.SkipWire(x, y + 2);
+				Wiring.SkipWire(x + 1, y);
+				Wiring.SkipWire(x + 1, y + 1);
+				Wiring.SkipWire(x + 1, y + 2);
+
+				int spawnX = x * 16 + 16;
+				int spawnY = (y + 3) * 16;
+
+				int npcIndex = -1;
+				if (Wiring.CheckMech(x, y, 10))
+				{
+					npcIndex = NPC.NewNPC(spawnX, spawnY - 12, NPCID.WallCreeper);
+				}
+				if (npcIndex >= 0)
+				{
+					Main.npc[npcIndex].SpawnedFromStatue = false;
+
+					//
+					// Consume TEX.
+					//
+					GetInstance<FactoryModWorld>().worldTEX -= TEXCost;
+					//
+					// Consume TEX.
+					//
+				}
 			}
 		}
 	}
