@@ -18,7 +18,7 @@ namespace FactoryMod.Tiles.TEX.Statues
 {
 	public class MechChestStatue : ModTile
 	{
-		public int TEXCost = 86;
+		public int TEXCost = 860;
 		public override void SetDefaults() {
 			Main.tileFrameImportant[Type] = true;
 			Main.tileObsidianKill[Type] = true;

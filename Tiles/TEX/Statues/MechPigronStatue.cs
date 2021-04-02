@@ -18,7 +18,7 @@ namespace FactoryMod.Tiles.TEX.Statues
 {
 	public class MechPigronStatue : ModTile
 	{
-		public int TEXCost = 32;
+		public int TEXCost = 64;
 		public override void SetDefaults() {
 			Main.tileFrameImportant[Type] = true;
 			Main.tileObsidianKill[Type] = true;
